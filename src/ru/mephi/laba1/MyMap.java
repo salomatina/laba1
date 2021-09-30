@@ -77,11 +77,7 @@ class MyMap {
     }
 
     public MyList getEntries() {
-        MyList listOfEntries = new MyList();
-        for (int i = 0; i < records.size(); i++) {
-            listOfEntries.add(((Record) records.get(i)).getKey() == ((Record) records.get(i)).getValue());
-        }
-        return getEntries();
+        return records;
     }
 
     public int size() {
@@ -110,6 +106,6 @@ class MyMap {
 //        System.out.println(map.keyContains(5));
 //        map.put(5, "a");
 //        System.out.println(map.get(5));
-//    }
+    }
 
 }
