@@ -6,8 +6,14 @@ class MyMap {
 
 
     public void put(Object key, Object value) {
-        Record rec = new Record(key, value);
-        records.add(rec);
+        int index = findIndexOfKey(key);
+        if(index == -1) {
+            Record rec = new Record(key, value);
+            records.add(rec);
+        }
+        else {
+            ((Record) records.get(index)).setValue(value);
+        }
     }
 
     public int findIndexOfKey(Object key) {
@@ -86,7 +92,7 @@ class MyMap {
         return size() == 0;
     }
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        MyMap map = new MyMap();
 //        System.out.println(map.isEmpty());
 //        map.put(1, "a");
@@ -102,6 +108,8 @@ class MyMap {
 //        System.out.println(map.size());
 //        System.out.println(map.isEmpty());
 //        System.out.println(map.keyContains(5));
+//        map.put(5, "a");
+//        System.out.println(map.get(5));
 //    }
 
 }

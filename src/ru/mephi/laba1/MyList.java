@@ -126,7 +126,7 @@ public class MyList {
         return removedObject;
     }
 
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
 //        // THERE ARE JUST SOME SILLY TESTS HERE
 //        MyList list = new MyList();
 //        System.out.println(list.isEmpty());
@@ -163,5 +163,5 @@ public class MyList {
 //        list.remove(3);
 //        System.out.println(list.currentSize);
 //        System.out.println(list.CONTAINER_CAPACITY* list.numberOfContainers);
-    }
+   // }
 }
