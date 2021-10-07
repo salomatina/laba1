@@ -3,7 +3,7 @@ package ru.mephi.laba1;
 public class MyList {
 
     private int currentSize = 0;
-    private final int CONTAINER_CAPACITY = 10;
+    private final int CONTAINER_CAPACITY = 8;
     private int numberOfContainers = 0;
     private Object[] currentArray;
 
@@ -33,37 +33,37 @@ public class MyList {
     }
 
     public boolean contains(Object object) {
-        int cnt = 0;
+        //int cnt = 0;
         for (int i = 0; i < currentSize; i++) {
-            if (currentArray[i] == object) {
-                cnt++;
-                break;
+            if (currentArray[i].equals(object)) {
+                //cnt++;
+                //break;
+                return true;
             }
         }
-        return cnt > 0;
+        return false;
     }
 
     public int indexOf(Object object) {
         if (this.contains(object)) {
-            int cnt = 0;
             for (int i = 0; i < currentSize; i++) {
-                if (currentArray[i] == object) {
-                    break;
+                if (currentArray[i].equals(object)) {
+                    return i;
                 }
-                cnt++;
             }
-            return cnt;
-        } else {
-            return -1;
         }
+        return -1;
     }
+
 
     public int returnIndex(int index) { // makes index valid for the task
         if (index < 0) {
             return 0;
-        } else if (index > currentSize) {
+        }
+        if (index > currentSize) {
             return currentSize;
-        } else return index;
+        }
+        return index;
     }
 
     public void increase() { // method for increasing number of containers
@@ -126,7 +126,7 @@ public class MyList {
         return removedObject;
     }
 
-   // public static void main(String[] args) {
+    public static void main(String[] args) {
 //        // THERE ARE JUST SOME SILLY TESTS HERE
 //        MyList list = new MyList();
 //        System.out.println(list.isEmpty());
@@ -163,5 +163,5 @@ public class MyList {
 //        list.remove(3);
 //        System.out.println(list.currentSize);
 //        System.out.println(list.CONTAINER_CAPACITY* list.numberOfContainers);
-   // }
+    }
 }

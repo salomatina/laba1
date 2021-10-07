@@ -1,7 +1,7 @@
 package ru.mephi.laba1;
 
 public class Record{
-    private Object key;
+    private final Object key;
     private Object value;
 
     public Record(Object key, Object value){
@@ -20,7 +20,7 @@ public class Record{
         this.value = value;
     }
 
-    public void setKey(Object key) {
-        this.key = key;
-    }
+//    public void setKey(Object key) {
+//        this.key = key;
+//    }
 }
